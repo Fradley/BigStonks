@@ -7,7 +7,7 @@ Pull data and run arima/other analyses on it
 - Make a better neural net
   -batch sizing
   -force model to learn by making predictions on smaller subsets
-- Do baseline conventional models
-  -Simple autoregression
-  -ARIMA
+- Do baseline conventional models  
+  -Simple autoregression  
+  -ARIMA  
 -Genetic optimization (focus on parameters)
