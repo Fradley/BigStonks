@@ -5,19 +5,11 @@ import os
 from datetime import datetime
 import smtplib
 
-# server = smtplib.SMTP('smtp.gmail.com', 587)
-# server.connect("smtp.gmail.com",587)
-# server.ehlo()
-# server.starttls()
-# server.ehlo()
-# email_user = 'stonkman9001'
-# pw = 'WallStreetBets'
-# server.login(email_user, pw)
-
 now = datetime.now()
 
 path = os.path.abspath('amd_daily/')
-key = '*'
+with open('Key') as f:
+    key = f.read()
 symbol = 'AMD'
 interval = '1min'
 counter = 0
@@ -29,11 +21,6 @@ while counter <= 10:
     except Exception as e:
         os.sleep(3)
         counter += 1
-# if counter == 11:
-    # msg = f'\nThe AMD daily data failed to download.\n{e}\n-Stonkman'
-# else:
-    # msg = f'\nThe AMD Daily File downloaded successfully!\n-Stonkman'
-# server.sendmail(email_user + '@gmail.com', 'sfradley96@gmail.com', msg)
 
 amd_ts = json.loads(req.text)
 meta = amd_ts['Meta Data']
